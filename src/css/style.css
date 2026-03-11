@@ -39,7 +39,7 @@ body {
 }
 
 .card {
-  background: var(--background-card);
+  background: var(--background-dark);
   padding: var(--spacing-lg);
   border-radius: var(--radius);
   margin-bottom: var(--spacing-lg);
@@ -121,9 +121,20 @@ footer {
   max-width: 500px;
 }
 
+/*=====================================
+FORM-CARD
+=======================================*/
+.form-card {
+  display: flex;
+  justify-content: space-around;
+}
+
 /* =========================
    START GAME FORM
 ========================= */
+.start-card {
+  width: 90%;
+}
 
 .start-card h2 {
   text-align: center;
@@ -132,7 +143,7 @@ footer {
 #start-form {
   margin-top: var(--spacing-lg);
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 0.5rem;
 }
 
 #start-form label {
@@ -162,8 +173,9 @@ footer {
    COUNTRY CARD (SECOND API)
 ========================= */
 
-/* #country-card {
-  text-align: center;
+#country-card {
+  min-width: 300px;
+  margin: 0.5rem;
 }
 
 .flag-image {
@@ -175,7 +187,7 @@ footer {
 
 #country-card p {
   margin-bottom: 0.5rem;
-} */
+}
 
 /* =========================
    HERO ANIMATION
@@ -203,12 +215,34 @@ footer {
    RESPONSIVE
 ========================= */
 
-@media (min-width: 768px) {
+@media (max-width: 800px) {
   .hero {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
-  #start-form button {
-    width: auto;
+  .form-card {
+    flex-wrap: wrap;
+  }
+
+  @keyframes floatHero {
+    0% {
+      transform: translateX(0px);
+    }
+
+    50% {
+      transform: translateX(-10px);
+    }
+
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+  .hero-image {
+    margin-left: 1rem;
+    max-width: 400px;
   }
 }
