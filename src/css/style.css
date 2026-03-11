@@ -1,31 +1,214 @@
 :root {
-  --font-body: Arial, Helvetica, sans-serif;
-  --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  /* colors */
-  --primary-color: #f0a868;
-  --secondary-color: #525b0f;
-  --tertiary-color: #8a470c;
-  --light-grey: #d0d0d0;
-  --dark-grey: #303030;
+  --primary-color: #2563eb;
+  --secondary-color: #fbbf24;
+  --background-dark: #0b1f3a;
+  --background-card: #102948;
+  --text-color: #ffffff;
+  --gray-color: #94a3b8;
 
-  /* sizes */
-  --font-base: 18px;
-  --small-font: 0.8em;
-  --large-font: 1.2em;
+  --font-main: "Poppins", Arial, sans-serif;
 }
-
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: var(--font-base);
-  color: var(--dark-grey);
+  margin: 0 auto;
+  font-family: var(--font-main);
+  background: var(--background-dark);
+  color: var(--text-color);
+  max-width: 1100px;
 }
 
-img {
-  max-width: 100%;
+.main-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background-color: black;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.container {
+  margin: auto;
+}
+
+.card {
+  background: var(--background-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius);
+  margin-bottom: var(--spacing-lg);
+}
+
+button {
+  background: var(--primary-color);
+  border: none;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+header,
+footer {
+  background: #08162b;
+  padding: 0;
+}
+/* =========================
+   GAMES LINK
+========================= */
+
+.games-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.games-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.games-count {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  display: flex;
+  align-items: center;
+}
+.hero-content p {
+  padding-left: 0.8rem;
+  text-align: justify;
+}
+.hero-image {
+  width: 100%;
+  margin-left: 5rem;
+  max-width: 500px;
+}
+
+.hero-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  max-width: 500px;
+}
+
+/* =========================
+   START GAME FORM
+========================= */
+
+.start-card h2 {
+  text-align: center;
+}
+
+#start-form {
+  margin-top: var(--spacing-lg);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#start-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+#start-form select {
+  width: 100%;
+  height: 44px;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  border: none;
+  margin-bottom: var(--spacing-md);
+  font-size: 1rem;
+}
+
+#start-form button {
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   COUNTRY CARD (SECOND API)
+========================= */
+
+/* #country-card {
+  text-align: center;
+}
+
+.flag-image {
+  width: 160px;
+  margin: auto;
+  margin-bottom: var(--spacing-md);
+  border-radius: 6px;
+}
+
+#country-card p {
+  margin-bottom: 0.5rem;
+} */
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+.hero-image {
+  animation: floatHero 4s ease-in-out infinite;
+}
+
+@keyframes floatHero {
+  0% {
+    transform: translateX(0px);
+  }
+
+  50% {
+    transform: translateX(-50px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (min-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #start-form button {
+    width: auto;
+  }
 }
