@@ -1,29 +1,58 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Gamess</title>
-
-  <link rel="stylesheet" href="../css/style.css" />
-
-  <script src="../js/game.js" type="module"></script>
+  <title>Trivia Game</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- <script type="module" src="js/main.js"></script> -->
 </head>
 
 <body>
-  <header class="divider">
 
+  <header>
+    <nav class="main-nav">
+
+      <img class="logo" src="./public/images/logos/logo.webp" alt="Trivia Game logo">
+
+      <a href="/history.html" class="games-link" aria-label="View games played history">
+        <span class="games-label">Games</span>
+        <span class="games-count">12</span>
+      </a>
+
+    </nav>
   </header>
 
-  <main class="divider">
+  <main class="container">
+
+    <section class="card game-card">
+      <div class="status">
+        <p id="progress" class="progress">Question 1 / 5</p>
+        <p id="score" class="score">Score: 0</p>
+      </div>
+
+      <div id="box-question" class="box-question">
+        <img src="/images/icons/question-icon.svg" alt="Question icon">
+        <h1 id="question-text">Loading question ...</h1>
+        <div id="answer-question" class="answer-question"></div>
+      </div>
+
+      <div class="next-question">
+        <button id="next-question-btn" class="next-question-btn" type="button" disabled>
+          Next Question
+        </button>
+      </div>
+
+    </section>
+
 
   </main>
 
-  <footer>&copy;NOT a real business</footer>
+  <footer>
+    &copy;2025 BYU-Idaho for BYU-Pathway — Trivia Game
+  </footer>
+
 </body>
 
 </html>
