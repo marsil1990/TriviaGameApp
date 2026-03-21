@@ -1,25 +1,75 @@
+import { mixQuestion, decodeHTML } from "./utils.mjs";
 export class Game {
-  constructor(questions, correctAnswer) {
+  constructor(questions) {
     this.questions = questions;
     this.index = 0;
     this.score = 0;
-    this.correctAnswer = correctAnswer;
+    this.correctAnswer;
+  }
+  init() {
+    this.renderGame();
   }
 
+  setCorrectAnswer() {
+    return (this.correctAnswer = this.questions[this.index].correct_answer);
+  }
   getCurrentQuestion() {
     return this.questions[this.index];
   }
 
-  setNextIndex() {
-    if (this.index < this.questions.length) {
+  nextQuestion() {
+    if (this.index < this.questions.length - 1) {
       this.index++;
+      this.setCorrectAnswer();
+      this.renderGame();
+    } else {
+      alert("No more questions");
     }
   }
 
   checkAnswer(selectAnswer) {
+    const score = document.getElementById("score");
+    const numberOfquestion = document.getElementById("progress");
+    console.log(this.correctAnswer == selectAnswer);
+    console.log(this.correctAnswer, selectAnswer);
     if (this.correctAnswer == selectAnswer) {
       this.score++;
+      score.innerHTML = `Score: ${this.score} correct`;
+      numberOfquestion.innerHTML = `${this.index + 1} / ${this.questions.length}`;
       return true;
-    } else return false;
+    } else {
+      score.innerHTML = `Score: ${this.score} correct`;
+      numberOfquestion.innerHTML = `${this.index + 1} / ${this.questions.length}`;
+      return false;
+    }
+  }
+
+  renderGame() {
+    const container = document.getElementById("answer-question");
+    const question = document.getElementById("question-text");
+    const score = document.getElementById("score");
+    const numberOfquestion = document.getElementById("progress");
+    score.innerHTML = `Score: ${this.score} correct`;
+    numberOfquestion.innerHTML = `${this.index + 1} / ${this.questions.length}`;
+
+    question.textContent = "";
+    container.innerHTML = "";
+    question.textContent = decodeHTML(this.questions[this.index].question);
+
+    container.innerHTML = `
+    <form id="answer-form">
+      ${mixQuestion(this.questions[this.index])
+        .map(
+          (answer, index) => `
+          <label>
+            <input type="radio" name="answer" value="${answer}">
+            ${answer}
+          </label><br>
+        `,
+        )
+        .join("")}
+      <button type="submit">Submit</button>
+    </form>
+  `;
   }
 }

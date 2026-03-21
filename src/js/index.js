@@ -1,5 +1,7 @@
 import { ApiTriviaGame } from "./apiTrivia";
 import { getCountriesFromAPI } from "../js/countries";
+import { setLocalStorage, getLocalStorage, mixQuestion } from "./utils.mjs";
+
 export async function homePage() {
   const form = document.getElementById("start-form");
 
@@ -8,11 +10,15 @@ export async function homePage() {
     const difficulty = document.getElementById("difficulty").value;
     const amount = document.getElementById("amount").value;
     const category = document.getElementById("category").value;
+    let result;
+    let saveGame;
     try {
-      await ApiTriviaGame(category, difficulty, amount);
+      result = await ApiTriviaGame(category, difficulty, amount);
+      saveGame = setLocalStorage("game", result);
     } catch (error) {
       console.error(error);
     }
+    window.location.href = "/game_pages/index.html";
   });
 }
 

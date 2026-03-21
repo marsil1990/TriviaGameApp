@@ -22,6 +22,20 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
+export function mixQuestion(questions) {
+  let answers = [...questions.incorrect_answers, questions.correct_answer];
+  console.log("answers", answers);
+  let randomQuestions = [];
+  let index;
+  while (answers.length != 0) {
+    index = Math.floor(Math.random() * answers.length);
+    randomQuestions.push(answers[index]);
+    answers.splice(index, 1);
+  }
+
+  return randomQuestions;
+}
+
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -44,15 +58,7 @@ export function renderListWithTemplate(
   parentElement.insertAdjacentHTML(position, html);
 }
 
-export function cartCount() {
-  const numberOfitems = (getLocalStorage("so-cart") || []).length;
-  const itemsnumber = document.querySelector(".itemsNumber");
-  if (itemsnumber) {
-    itemsnumber.textContent = numberOfitems || "";
-  }
-}
-
-function decodeHTML(html) {
+export function decodeHTML(html) {
   const txt = document.createElement("textarea");
   txt.innerHTML = html;
   return txt.value;
