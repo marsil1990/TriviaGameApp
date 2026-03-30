@@ -1,6 +1,8 @@
+const baseURL = import.meta.env.VITE_SERVER_URL_TRIVIA;
+
 export async function ApiTriviaGame(category, difficulty, amount) {
   const res = await fetch(
-    `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`,
+    `${baseURL}amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`,
   );
 
   if (!res.ok) {

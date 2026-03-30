@@ -1,7 +1,6 @@
+const baseURL = import.meta.env.VITE_SERVER_URL_COUNTRY;
 export async function getCountriesFromAPI() {
-  const data = await fetch(
-    "https://restcountries.com/v3.1/all?fields=name,capital,region,population,flags",
-  );
+  const data = await fetch(baseURL);
   if (!data.ok) {
     throw new Error("Failed to fetch country data.");
   }
