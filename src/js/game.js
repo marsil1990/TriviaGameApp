@@ -35,11 +35,11 @@ export class Game {
     if (this.correctAnswer == selectAnswer) {
       this.score++;
       score.innerHTML = `Score: ${this.score} correct`;
-      numberOfquestion.innerHTML = `${this.index + 1} / ${this.questions.length}`;
+      numberOfquestion.innerHTML = `Question: ${this.index + 1} / ${this.questions.length}`;
       return true;
     } else {
       score.innerHTML = `Score: ${this.score} correct`;
-      numberOfquestion.innerHTML = `${this.index + 1} / ${this.questions.length}`;
+      numberOfquestion.innerHTML = `Question: ${this.index + 1} / ${this.questions.length}`;
       return false;
     }
   }
@@ -50,7 +50,7 @@ export class Game {
     const score = document.getElementById("score");
     const numberOfquestion = document.getElementById("progress");
     score.innerHTML = `Score: ${this.score} correct`;
-    numberOfquestion.innerHTML = `${this.index + 1} / ${this.questions.length}`;
+    numberOfquestion.innerHTML = `Question: ${this.index + 1} / ${this.questions.length}`;
 
     question.textContent = "";
     container.innerHTML = "";
@@ -68,7 +68,7 @@ export class Game {
         `,
         )
         .join("")}
-      <button type="submit">Submit</button>
+      <button type="submit" id="submit-answer">Submit</button>
     </form>
   `;
   }

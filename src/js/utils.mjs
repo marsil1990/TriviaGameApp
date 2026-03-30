@@ -63,3 +63,24 @@ export function decodeHTML(html) {
   txt.innerHTML = html;
   return txt.value;
 }
+
+export async function loadTemplate(path) {
+  const res = await fetch(path);
+  const template = await res.text();
+  return template;
+}
+
+export async function loadHeaderFooter() {
+  const footerTemplate = await loadTemplate("../partials/footer.html");
+  const headerTemplate = await loadTemplate("../partials/header.html");
+  const conteinerFooter = document.getElementById("footer");
+  const conteinerHeader = document.getElementById("header");
+  const fragmentFooter = document
+    .createRange()
+    .createContextualFragment(footerTemplate);
+  const fragmentHeader = document
+    .createRange()
+    .createContextualFragment(headerTemplate);
+  conteinerFooter.append(fragmentFooter);
+  conteinerHeader.append(fragmentHeader);
+}

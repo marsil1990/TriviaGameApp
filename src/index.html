@@ -11,17 +11,8 @@
 
 <body>
 
-  <header>
-    <nav class="main-nav">
+  <header id="header">
 
-      <img class="logo" src="./public/images/logos/logo.webp" alt="Trivia Game logo">
-
-      <a href="/history.html" class="games-link" aria-label="View games played history">
-        <span class="games-label">Games</span>
-        <span class="games-count">12</span>
-      </a>
-
-    </nav>
   </header>
 
   <main class="container">
@@ -54,7 +45,8 @@
 
           <div class="form-group">
             <label for="category">Category</label>
-            <select name="category" id="category">
+            <select name="category" id="category" required>
+              <option value="" disabled selected>Choose a category</option>
               <option value="9">General Knowledge</option>
               <option value="17">Science and Nature</option>
               <option value="21">Sports</option>
@@ -65,7 +57,8 @@
 
           <div class="form-group">
             <label for="difficulty">Difficulty</label>
-            <select name="difficulty" id="difficulty">
+            <select name="difficulty" id="difficulty" required>
+              <option value="" disabled selected>Choose a difficulty</option>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
@@ -74,7 +67,8 @@
 
           <div class="form-group">
             <label for="amount">Number of Questions</label>
-            <select name="amount" id="amount">
+            <select name="amount" id="amount" required>
+              <option value="" disabled selected>Choose the number of questions</option>
               <option value="5">5</option>
               <option value="10">10</option>
             </select>
@@ -94,8 +88,8 @@
 
   </main>
 
-  <footer>
-    &copy;2025 BYU-Idaho for BYU-Pathway — Trivia Game
+  <footer id="footer">
+
   </footer>
 
 </body>
