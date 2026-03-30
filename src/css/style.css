@@ -341,7 +341,7 @@ GAME PAGE
   transition: 0.2s ease;
 }
 
-.answer-question button[type="submit"]:disabled:hover {
+.answer-question button[type="submit"]:disabled {
   background-color: #24456f;
   border: none;
 }
