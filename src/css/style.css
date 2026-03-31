@@ -7,6 +7,10 @@
   --gray-color: #94a3b8;
 
   --font-main: "Poppins", Arial, sans-serif;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --radius: 12px;
 }
 * {
   box-sizing: border-box;
@@ -352,6 +356,49 @@ GAME PAGE
 .next-question-btn:disabled {
   background-color: #475569;
   cursor: not-allowed;
+}
+
+/* =========================
+   RESULT PAGE
+========================= */
+/* RESULTS */
+
+.results-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--background-card);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.results-card h1 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.results-card p {
+  background: #1c3658;
+  padding: 0.7rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+}
+
+/* BUTTON */
+
+.results-actions {
+  margin-top: 1.5rem;
+}
+
+.results-actions button {
+  background: var(--secondary-color);
+  color: black;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+}
+
+.results-actions button:hover {
+  background: #facc15;
 }
 
 /* =========================

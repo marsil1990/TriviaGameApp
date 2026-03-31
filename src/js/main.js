@@ -1,6 +1,7 @@
 import { homePage, renderCountriesCard } from "./index";
-import { loadHeaderFooter, loadTemplate } from "./utils.mjs";
+import { loadHeaderFooter, updateGamesCount } from "./utils.mjs";
 
-loadHeaderFooter();
+await loadHeaderFooter();
 renderCountriesCard();
+updateGamesCount();
 homePage();

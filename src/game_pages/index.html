@@ -1,39 +1,42 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="../js/gamePage.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trivia Game</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <script type="module" src="../js/gamePage.js"></script>
-</head>
+  <body>
+    <header id="header"></header>
 
-<body>
-  <header id="header"></header>
+    <main class="container-game">
+      <section class="card game-card">
+        <div class="status">
+          <p id="progress" class="progress"></p>
+          <p id="score" class="score"></p>
+        </div>
 
-  <main class="container-game">
-    <section class="card game-card">
-      <div class="status">
-        <p id="progress" class="progress"></p>
-        <p id="score" class="score"></p>
-      </div>
+        <div id="box-question" class="box-question">
+          <img src="/images/logos/question.png" alt="Question icon" />
+          <h1 id="question-text"></h1>
+          <div id="answer-question" class="answer-question"></div>
+        </div>
 
-      <div id="box-question" class="box-question">
-        <img src="/images/logos/question.png" alt="Question icon" />
-        <h1 id="question-text"></h1>
-        <div id="answer-question" class="answer-question"></div>
-      </div>
+        <div class="next-question">
+          <button
+            id="next-question-btn"
+            class="next-question-btn"
+            type="button"
+            disabled
+          >
+            Next Question
+          </button>
+        </div>
+      </section>
+    </main>
 
-      <div class="next-question">
-        <button id="next-question-btn" class="next-question-btn" type="button" disabled>
-          Next Question
-        </button>
-      </div>
-    </section>
-  </main>
-
-  <footer id="footer"></footer>
-</body>
-
+    <footer id="footer"></footer>
+  </body>
 </html>

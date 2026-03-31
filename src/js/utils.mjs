@@ -84,3 +84,12 @@ export async function loadHeaderFooter() {
   conteinerFooter.append(fragmentFooter);
   conteinerHeader.append(fragmentHeader);
 }
+
+export function updateGamesCount() {
+  const history = getLocalStorage("gameHistory") || [];
+  const counter = document.querySelector(".games-count");
+  console.log(counter);
+  if (counter) {
+    counter.textContent = history.length;
+  }
+}

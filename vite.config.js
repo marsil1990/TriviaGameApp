@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         game: resolve(__dirname, "src/game_pages/index.html"),
+        restuls: resolve(__dirname, "src/results/results.html"),
       },
     },
   },

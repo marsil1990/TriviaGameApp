@@ -12,24 +12,21 @@ game.setCorrectAnswer();
 
 next.addEventListener("click", () => {
   game.nextQuestion();
+  next.disabled = true;
 });
 
 document.addEventListener("submit", (e) => {
   if (e.target.id === "answer-form") {
-    e.preventDefault(); // evita que se envíe
+    e.preventDefault();
     if (!e.target.checkValidity()) {
       alert("Complete all fields");
     }
 
-    // e.preventDefault();
     const selected = document.querySelector('input[name="answer"]:checked');
     if (!selected) return;
     game.checkAnswer(selected.value);
     const submitButton = document.getElementById("submit-answer");
     submitButton.disabled = true;
     next.disabled = false;
-    next.addEventListener("click", () => {
-      next.disabled = true;
-    });
   }
 });

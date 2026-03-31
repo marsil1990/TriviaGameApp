@@ -1,4 +1,9 @@
-import { mixQuestion, decodeHTML } from "./utils.mjs";
+import {
+  mixQuestion,
+  decodeHTML,
+  setLocalStorage,
+  getLocalStorage,
+} from "./utils.mjs";
 export class Game {
   constructor(questions) {
     this.questions = questions;
@@ -23,7 +28,7 @@ export class Game {
       this.setCorrectAnswer();
       this.renderGame();
     } else {
-      alert("No more questions");
+      this.finishGame();
     }
   }
 
@@ -42,6 +47,21 @@ export class Game {
       numberOfquestion.innerHTML = `Question: ${this.index + 1} / ${this.questions.length}`;
       return false;
     }
+  }
+
+  finishGame() {
+    const result = {
+      score: this.score,
+      totalQuestions: this.questions.length,
+      percentage: Math.round((this.score / this.questions.length) * 100),
+      date: new Date().toISOString(),
+    };
+    setLocalStorage("lastGameResult", result);
+    const history = getLocalStorage("gameHistory") || [];
+    history.push(result);
+    setLocalStorage("gameHistory", history);
+
+    window.location.href = "/results/results.html";
   }
 
   renderGame() {

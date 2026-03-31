@@ -1,10 +1,11 @@
 import { ApiTriviaGame } from "./apiTrivia";
 import { getCountriesFromAPI } from "../js/countries";
-import { setLocalStorage, getLocalStorage, mixQuestion } from "./utils.mjs";
+import { setLocalStorage, getLocalStorage } from "./utils.mjs";
+
+
 
 export async function homePage() {
   const form = document.getElementById("start-form");
-
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     const difficulty = document.getElementById("difficulty").value;
