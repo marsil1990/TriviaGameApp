@@ -1,7 +1,11 @@
 import { homePage, renderCountriesCard } from "./index";
 import { loadHeaderFooter, updateGamesCount } from "./utils.mjs";
 
-await loadHeaderFooter();
-renderCountriesCard();
-updateGamesCount();
-homePage();
+async function init() {
+  await loadHeaderFooter();
+  renderCountriesCard();
+  updateGamesCount();
+  homePage();
+}
+
+init();

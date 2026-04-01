@@ -384,7 +384,6 @@ GAME PAGE
   border-radius: 8px;
   opacity: 0;
   animation: fadeUp 3s ease forwards;
-  
 }
 
 @keyframes fadeUp {
@@ -414,20 +413,40 @@ GAME PAGE
 /* BUTTON */
 
 .results-actions {
-  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
 }
 
-.results-actions button {
+.btn {
+  padding: 10px 20px;
   background: var(--secondary-color);
   color: black;
-  padding: 0.7rem 1.2rem;
-  border-radius: 8px;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 200px;
+  height: 60px;
 }
 
-.results-actions button:hover {
+.results-actions .btn:hover {
   background: #facc15;
 }
 
+/*
+=============================
+ERRROR MESSAGE
+============================*/
+.error-message {
+  background-color: #ffdddd;
+  color: #b00020;
+  padding: 10px;
+  border: 1px solid #b00020;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  text-align: center;
+}
 /* =========================
    RESPONSIVE
 ========================= */

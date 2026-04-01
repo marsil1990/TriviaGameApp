@@ -43,20 +43,20 @@ export function getParam(param) {
   return product;
 }
 
-export function renderListWithTemplate(
-  templateFn,
-  parentElement,
-  list,
-  position = "afterbegin",
-  clear = false,
-) {
-  if (clear) {
-    parentElement.innerHTML = "";
-  }
+// export function renderListWithTemplate(
+//   templateFn,
+//   parentElement,
+//   list,
+//   position = "afterbegin",
+//   clear = false,
+// ) {
+//   if (clear) {
+//     parentElement.innerHTML = "";
+//   }
 
-  const html = list.map(templateFn).join("");
-  parentElement.insertAdjacentHTML(position, html);
-}
+//   const html = list.map(templateFn).join("");
+//   parentElement.insertAdjacentHTML(position, html);
+// }
 
 export function decodeHTML(html) {
   const txt = document.createElement("textarea");

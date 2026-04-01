@@ -12,6 +12,10 @@ function loadResultsPage() {
   const gamesPlayed = document.getElementById("games-played");
   const averagePercentage = document.getElementById("average-percentage");
   const bestPercentage = document.getElementById("best-percentage");
+  const restartGame = document.getElementById("new-game");
+  restartGame.addEventListener("click", () => {
+    localStorage.clear();
+  });
 
   if (!lastGame) {
     finalScore.textContent = "No Game Results Avaiable.";
@@ -34,6 +38,10 @@ function loadResultsPage() {
   bestPercentage.textContent = `Best Percentage: ${best}%`;
 }
 
-await loadHeaderFooter();
-loadResultsPage();
-updateGamesCount();
+async function init() {
+  await loadHeaderFooter();
+  loadResultsPage();
+  updateGamesCount();
+}
+
+init();
