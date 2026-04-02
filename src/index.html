@@ -1,89 +1,96 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Play Trivia Game online. Choose a category, select the difficulty, answer multiple-choice questions, and track your progress with game history."
+    />
+    <link rel="icon" href="/images/favicon.ico" />
+    <title>Trivia Game | Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="Play Trivia Game online. Choose a category, select the difficulty, answer multiple-choice questions, and track your progress with game history." />
-  <link rel="icon" href="/images/favicon.ico" />
-  <title>Trivia Game | Home</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <script type="module" src="js/main.js"></script>
-</head>
+  <body>
+    <header id="header"></header>
 
-<body>
-  <header id="header"></header>
+    <main class="container">
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">WELCOME TO TRIVIA GAME</h1>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">WELCOME TO TRIVIA GAME</h1>
+          <p>
+            This trivia application lets you explore different categories of
+            knowledge while challenging yourself with multiple-choice questions.
+            Choose your preferred category and difficulty, answer the questions,
+            and see your results at the end of the game. Your game history will
+            also allow you to track your progress over time.
+          </p>
+        </div>
 
-        <p>
-          This trivia application lets you explore different categories of
-          knowledge while challenging yourself with multiple-choice questions.
-          Choose your preferred category and difficulty, answer the questions,
-          and see your results at the end of the game. Your game history will
-          also allow you to track your progress over time.
-        </p>
-      </div>
-
-      <picture>
-        <source media="(max-width: 800px)" srcset="/images/hero-mobile.webp" />
-        <img class="hero-image" src="/images/hero.webp" alt="Trivia game illustration" loading="eager"
-          decoding="async" />
-      </picture>
-
-    </section>
-
-    <div class="form-card">
-      <section class="card start-card">
-        <h2 class="card-title">Start a New Game</h2>
-
-        <form id="start-form" class="start-form">
-          <div class="form-group">
-            <label for="category">Category</label>
-            <select name="category" id="category" required>
-              <option value="" disabled selected>Choose a category</option>
-              <option value="9">General Knowledge</option>
-              <option value="17">Science and Nature</option>
-              <option value="21">Sports</option>
-              <option value="23">History</option>
-              <option value="22">Geography</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="difficulty">Difficulty</label>
-            <select name="difficulty" id="difficulty" required>
-              <option value="" disabled selected>Choose a difficulty</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="amount">Number of Questions</label>
-            <select name="amount" id="amount" required>
-              <option value="" disabled selected>
-                Choose the number of questions
-              </option>
-              <option value="5">5</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-
-          <button class="start-button" type="submit">Start Game</button>
-        </form>
+        <picture>
+          <source
+            media="(max-width: 800px)"
+            srcset="/images/hero-mobile.webp"
+          />
+          <img
+            class="hero-image"
+            src="/images/hero.webp"
+            alt="Trivia game illustration"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
       </section>
 
-      <section id="country-card" class="country-card"></section>
-    </div>
-  </main>
+      <div class="form-card">
+        <section class="card start-card">
+          <h2 class="card-title">Start a New Game</h2>
 
-  <footer id="footer"></footer>
-</body>
+          <form id="start-form" class="start-form">
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select name="category" id="category" required>
+                <option value="" disabled selected>Choose a category</option>
+                <option value="9">General Knowledge</option>
+                <option value="17">Science and Nature</option>
+                <option value="21">Sports</option>
+                <option value="23">History</option>
+                <option value="22">Geography</option>
+              </select>
+            </div>
 
+            <div class="form-group">
+              <label for="difficulty">Difficulty</label>
+              <select name="difficulty" id="difficulty" required>
+                <option value="" disabled selected>Choose a difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Number of Questions</label>
+              <select name="amount" id="amount" required>
+                <option value="" disabled selected>
+                  Choose the number of questions
+                </option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+
+            <button class="start-button" type="submit">Start Game</button>
+          </form>
+        </section>
+
+        <section id="country-card" class="country-card"></section>
+      </div>
+    </main>
+
+    <footer id="footer"></footer>
+  </body>
 </html>

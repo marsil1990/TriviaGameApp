@@ -1,8 +1,7 @@
 import { Game } from "./game";
 import { getLocalStorage, decodeHTML } from "./utils.mjs";
-import { loadHeaderFooter } from "./utils.mjs";
+import { loadHeaderFooter, updateGamesCount } from "./utils.mjs";
 
-loadHeaderFooter();
 const next = document.getElementById("next-question-btn");
 
 const questions = getLocalStorage("game");
@@ -35,3 +34,10 @@ if (!questions || !questions.length) {
     }
   });
 }
+
+async function init() {
+  await loadHeaderFooter();
+  updateGamesCount();
+}
+
+init();

@@ -39,7 +39,7 @@ function loadResultsPage() {
 }
 
 async function init() {
-  loadHeaderFooter();
+  await loadHeaderFooter();
   loadResultsPage();
   updateGamesCount();
 }
