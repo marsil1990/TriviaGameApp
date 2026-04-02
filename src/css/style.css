@@ -21,7 +21,9 @@ body {
   font-family: var(--font-main);
   background: var(--background-dark);
   color: var(--text-color);
-  max-width: 1100px;
+  max-width: 900px;
+  max-height: 800px;
+  min-height: 700px;
 }
 
 .main-nav {
@@ -31,11 +33,14 @@ body {
   align-items: center;
   padding: 1rem 1rem;
   background-color: black;
+  min-height: 90px;
 }
 
 .logo {
-  width: 150px;
+  width: 220px;
+  max-width: 100%;
   height: auto;
+  display: block;
 }
 
 .container {
@@ -63,11 +68,19 @@ button:hover {
   transform: translateY(-2px);
 }
 
-header,
+header {
+  background: #08162b;
+  padding: 0;
+  min-height: 80px;
+}
+
 footer {
   background: #08162b;
   padding: 0;
+  text-align: center;
+  min-height: 60px;
 }
+
 /* =========================
    GAMES LINK
 ========================= */
@@ -225,6 +238,7 @@ GAME PAGE
   padding: 2rem;
   border-radius: 18px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  margin: 5px auto;
 }
 
 .status {
@@ -237,7 +251,7 @@ GAME PAGE
 .progress,
 .score {
   background-color: var(--secondary-color);
-  padding: 0.8rem 1rem;
+  padding: 0.5rem 0.7rem;
   border-radius: 10px;
   font-weight: 600;
   color: black;
@@ -245,10 +259,13 @@ GAME PAGE
 
 .box-question {
   text-align: center;
+  max-height: 600px;
+  min-height: 400px;
 }
 
 .box-question img {
-  width: 70px;
+  width: 50px;
+  height: auto;
   margin-bottom: 1rem;
   animation: waveMove 3s linear infinite alternate;
 }
@@ -302,17 +319,17 @@ GAME PAGE
 .answer-question button,
 .answer-question label {
   display: block;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   background-color: #1c3658;
   color: yellow;
   border: 1px solid transparent;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 0.5rem;
   cursor: pointer;
   text-align: left;
   transition: 0.2s ease;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .answer-question button[type="submit"] {
@@ -320,7 +337,7 @@ GAME PAGE
   background-color: #fbbf24;
   color: black;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .answer-question button:hover,
@@ -382,11 +399,11 @@ GAME PAGE
   padding: 0.7rem;
   margin: 0.5rem 0;
   border-radius: 8px;
-  opacity: 0;
-  animation: fadeUp 3s ease forwards;
+  /* opacity: 0; */
+  /* animation: fadeUp 3s ease forwards; */
 }
 
-@keyframes fadeUp {
+/* @keyframes fadeUp {
   to {
     opacity: 1;
   }
@@ -409,7 +426,7 @@ GAME PAGE
 
 .results-card p:nth-child(6) {
   animation-delay: 1s;
-}
+} */
 /* BUTTON */
 
 .results-actions {
@@ -421,13 +438,13 @@ GAME PAGE
 }
 
 .btn {
-  padding: 10px 20px;
+  padding: 5px 10px;
   background: var(--secondary-color);
   color: black;
   text-decoration: none;
   border-radius: 5px;
-  width: 200px;
-  height: 60px;
+  width: 150px;
+  height: 50px;
 }
 
 .results-actions .btn:hover {
@@ -457,6 +474,25 @@ ERRROR MESSAGE
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin: 5px auto;
+    width: 90%;
+  }
+
+  .hero-content p {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .hero-image {
+    width: 92%;
+    max-width: 420px;
+    margin-left: 0;
+  }
+
+  .logo {
+    width: 160px;
+    height: auto;
+    margin: 0 auto;
   }
 
   .form-card {
@@ -477,8 +513,12 @@ ERRROR MESSAGE
     }
   }
 
-  .hero-image {
-    margin-left: 1rem;
-    max-width: 400px;
+  .country-card {
+    width: 90%;
+    height: auto;
   }
+
+  /* .box-question {
+    min-height: 400px;
+  } */
 }

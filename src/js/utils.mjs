@@ -24,7 +24,6 @@ export function setClick(selector, callback) {
 
 export function mixQuestion(questions) {
   let answers = [...questions.incorrect_answers, questions.correct_answer];
-  console.log("answers", answers);
   let randomQuestions = [];
   let index;
   while (answers.length != 0) {
@@ -88,7 +87,7 @@ export async function loadHeaderFooter() {
 export function updateGamesCount() {
   const history = getLocalStorage("gameHistory") || [];
   const counter = document.querySelector(".games-count");
-  console.log(counter);
+
   if (counter) {
     counter.textContent = history.length;
   }

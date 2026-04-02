@@ -35,8 +35,7 @@ export class Game {
   checkAnswer(selectAnswer) {
     const score = document.getElementById("score");
     const numberOfquestion = document.getElementById("progress");
-    console.log(this.correctAnswer == selectAnswer);
-    console.log(this.correctAnswer, selectAnswer);
+
     if (this.correctAnswer == selectAnswer) {
       this.score++;
       score.innerHTML = `Score: ${this.score} correct`;
